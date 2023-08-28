@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "@react-native-assets/slider": "^7.0.3",
+    "@react-native-community/checkbox": "^0.5.16",
     "react": "18.2.0",
     "react-native": "0.72.3",
-    "react-native-track-player": "^3.2.0",
+    "react-native-radio-buttons-group": "^3.0.2",
+    "react-native-track-player": "^3.2.0-dfd65662c6a7a7e8d9d71e2fa5772a1d9cb8b226",
     "react-native-windows": "^0.72.5"
   },
   "devDependencies": {
