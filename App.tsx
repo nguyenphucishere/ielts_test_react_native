@@ -14,6 +14,8 @@ import AudioSetting from './app/AudioSetting';
 import TrackPlayer, { State, TrackType } from 'react-native-track-player/src';
 import { getPlaybackState } from 'react-native-track-player/src/trackPlayer';
 import Booklet from './app/Booklet';
+import ListeningQuestions from './app/tests/ListeningQuestions';
+import TestView from './app/tests/TestView';
 
 function App(): JSX.Element {
 
@@ -56,12 +58,16 @@ function App(): JSX.Element {
       });
     })
 
+    return () => {
+      DeviceEventEmitter.removeAllListeners();
+    }
+
   }, [])
 
   return (
     <SafeAreaView>
       <View style={styles.body}>
-        {!isStarted && <SloganBar />}
+        {/* {!isStarted && <SloganBar />}
         <TopBar isVolumeEnabled={isConfirmed} isStarted={isStarted} />
 
         {!isReady && (
@@ -72,8 +78,11 @@ function App(): JSX.Element {
         )}
 
         {isReady && (
-          !isStarted ? <Booklet /> : <Text>I am a test!</Text>
-        )}
+          !isStarted ? <Booklet /> : (
+            <ListeningQuestions />
+          )
+        )} */}
+        <TestView />
       </View>
     </SafeAreaView>
   );
