@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image, Text, DeviceEventEmitter, Pressable, Animated } from "react-native-windows";
+import { StyleSheet, View, Image, Text, DeviceEventEmitter, Pressable } from "react-native-windows";
 import { Slider } from '@react-native-assets/slider'
 import { useEffect, useRef, useState } from "react";
 import TrackPlayer from '../node_modules/react-native-track-player/src';
@@ -101,7 +101,7 @@ const TopBar = (props: any): JSX.Element => {
     const t = useRef({ m: 0, s: 10 })
     const [isTimeHover, setIsTimeHover] = useState(false);
 
-    useEffect(() => {
+    useEffect((): any => {
         (async () => {
             await TrackPlayer.setupPlayer();
 
@@ -125,7 +125,12 @@ const TopBar = (props: any): JSX.Element => {
             })
 
         })()
-        //setSec(0)
+
+
+        return (async () => {
+            await TrackPlayer.stop();
+            await TrackPlayer.reset();
+        })
     }, [])
 
     useEffect(() => {
@@ -135,8 +140,7 @@ const TopBar = (props: any): JSX.Element => {
 
         (async () => {
             await TrackPlayer.stop();
-            //await TrackPlayer.getPlayWhenReady();
-            await TrackPlayer.play()
+            await TrackPlayer.play();
 
             const interval = setInterval(async () => {
 
