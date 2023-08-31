@@ -34,7 +34,8 @@ const TestView = (props: any): JSX.Element => {
                     'newspapers',
                     'interviews'
                 ]
-            }, {
+            },
+            {
                 type: 3,
                 content: 'Which THREE things does the Guide to the Library have information about?',
                 options: [
@@ -47,6 +48,17 @@ const TestView = (props: any): JSX.Element => {
                     'regular events',
                     'staff'
                 ],
+                maxOptions: 3,
+            },
+            {
+                type: 4,
+                content: [
+                    'Quilt Shop',
+                    'Handicrafts Museum',
+                    'School House'
+                ],
+                options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+                map: 'https://computer.ieltsessentials.com/listening/static/media/UILI20003L8-0-0-21.4af4c159.PNG',
                 maxOptions: 3,
             }
         ],

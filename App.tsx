@@ -67,9 +67,9 @@ function App(): JSX.Element {
   return (
     <SafeAreaView>
       <View style={styles.body}>
-        {/* {!isStarted && <SloganBar />}
+        {!isStarted && <SloganBar />}
         <TopBar isVolumeEnabled={isConfirmed} isStarted={isStarted} />
-
+        {/* 
         {!isReady && (
           !isConfirmed ?
             <InformationReview /> :
