@@ -33,9 +33,8 @@ export type test = {
 type coordinates = [number, number]
 
 export type question = ({
-    //* matching = 1
-    //* map/chart labelling = 4
-    type: 1 | 4,
+    //* matching
+    type: 1,
     content: string[],
     options: string[],
 } | {
@@ -49,6 +48,12 @@ export type question = ({
     content: string,
     options: string[],
     maxOptions: number
+} | {
+    //* map/chart labelling
+    type: 4,
+    content: string[],
+    options: string[],
+    map: string
 } | {
     //* form completion
     type: 5,
