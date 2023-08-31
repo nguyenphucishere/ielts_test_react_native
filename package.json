@@ -16,6 +16,7 @@
     "react": "18.2.0",
     "react-native": "0.72.3",
     "react-native-radio-buttons-group": "^3.0.2",
+    "react-native-table-component": "^1.2.2",
     "react-native-track-player": "^3.2.0-dfd65662c6a7a7e8d9d71e2fa5772a1d9cb8b226",
     "react-native-windows": "^0.72.5"
   },
@@ -27,6 +28,7 @@
     "@react-native/metro-config": "^0.72.9",
     "@tsconfig/react-native": "^3.0.0",
     "@types/react": "^18.0.24",
+    "@types/react-native-table-component": "^1.2.4",
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^29.2.1",
     "eslint": "^8.19.0",
