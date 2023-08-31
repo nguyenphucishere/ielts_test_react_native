@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native-windows";
 import RadioGroup, { RadioButtonProps } from 'react-native-radio-buttons-group';
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 
 const styles = StyleSheet.create({
@@ -47,6 +47,10 @@ const styles = StyleSheet.create({
 const MultipleChoice = (props: any): JSX.Element => {
 
     const [answer, _] = useState<string | undefined>(undefined)
+
+    useEffect(() => {
+        props.onChange(answer);
+    }, [answer])
 
 
     const radioButtons: RadioButtonProps[] = useMemo(() => ([

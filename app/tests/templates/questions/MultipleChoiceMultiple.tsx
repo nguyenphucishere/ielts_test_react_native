@@ -43,7 +43,16 @@ const styles = StyleSheet.create({
 
 const MultipleChoiceMultiple = (props: any): JSX.Element => {
 
-    const ans = useRef(Array(props.options?.length && 0).fill(false))
+    const changeAns = (a: any) => {
+
+        const n: Array<number> = a.map((v: any, index: number) => {
+            if (!v) return -1;
+
+            return index;
+        }).filter((i: number) => i > 0);
+
+        props.onChange(n);
+    }
 
     return (
         <View style={styles.multipleQuestion}>
@@ -57,7 +66,7 @@ const MultipleChoiceMultiple = (props: any): JSX.Element => {
             </View>
             <View style={styles.options}>
                 <CheckBoxGroup options={props.options} maxOptions={props.maxOptions}
-                    onChange={(a: any) => ans.current = a}
+                    onChange={changeAns}
                 />
 
             </View>
